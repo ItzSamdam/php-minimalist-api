@@ -1,0 +1,113 @@
+# Dependency directories
+/vendor/
+/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+.env.testing
+!.env.example
+
+# Log files
+/logs/*
+*.log
+!logs/.gitkeep
+
+# Runtime data
+/sessions/*
+!/sessions/.gitkeep
+/tmp/*
+!/tmp/.gitkeep
+
+# Cache directories
+/cache/*
+!/cache/.gitkeep
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Composer files (keep composer.json and composer.lock)
+composer.phar
+/composer.lock
+
+# PHPUnit
+/phpunit.xml
+.phpunit.result.cache
+
+# Testing coverage
+/coverage/
+
+# Backup files
+*.backup
+*.bak
+
+# Local configuration overrides
+/config/local.php
+/config/development.php
+
+# Uploads directory (if you have file uploads)
+/uploads/*
+!/uploads/.gitkeep
+/storage/*
+!/storage/.gitkeep
+
+# SSL certificates (if any)
+/ssl/*
+!/ssl/.gitkeep
+
+# Build artifacts
+/build/
+/dist/
+
+# Database files (if using SQLite)
+*.sqlite
+*.db
+
+# Migration lock file (if you use one)
+migrations.lock
+
+# Package files
+*.tar.gz
+*.zip
+
+# MacOS
+*.DS_Store?
+.AppleDouble
+.LSOverride
+
+# Windows
+[Tt]humbs.db
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Linux
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local development scripts
+/dev/
+/scripts/local/
+
+# Docker (if you add Docker later)
+docker-compose.override.yml
