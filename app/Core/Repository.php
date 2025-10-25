@@ -32,6 +32,29 @@ abstract class Repository
         return $stmt->fetchAll();
     }
 
+    public function findWithRelations(int $id, array $relations): ?array
+    {
+        $record = $this->find($id);
+        if (!$record) {
+            return null;
+        }
+
+        foreach ($relations as $relation) {
+            $relatedRepoClass = "App\\Repositories\\" . ucfirst($relation) . "Repository";
+            if (class_exists($relatedRepoClass)) {
+                $relatedRepo = new $relatedRepoClass();
+                $foreignKey = "{$relation}_id";
+                if (isset($record[$foreignKey])) {
+                    $record[$relation] = $relatedRepo->find($record[$foreignKey]);
+                }
+            }
+        }
+
+        return $record;
+    }
+
+    
+
     public function create(array $data): int
     {
         $columns = implode(', ', array_keys($data));

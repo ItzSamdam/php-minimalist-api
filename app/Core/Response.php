@@ -51,4 +51,44 @@ class Response
         http_response_code(204);
         return '';
     }
+
+    public static function notAuthorized(string $message = 'Unauthorized access'): string
+    {
+        return self::error($message, 401);
+    }
+
+    public static function forbidden(string $message = 'Forbidden access'): string
+    {
+        return self::error($message, 403);
+    }
+
+    public static function internalServerError(string $message = 'Internal server error'): string
+    {
+        return self::error($message, 500);
+    }
+
+    public static function badRequest(string $message = 'Bad request', array $errors = []): string
+    {
+        return self::error($message, 400, $errors);
+    }
+
+    public static function conflict(string $message = 'Conflict occurred'): string
+    {
+        return self::error($message, 409);
+    }
+
+    public static function tooManyRequests(string $message = 'Too many requests'): string
+    {
+        return self::error($message, 429);
+    }
+
+    public static function serviceUnavailable(string $message = 'Service unavailable'): string
+    {
+        return self::error($message, 503);
+    }
+
+    public static function maintenanceMode(string $message = 'Service under maintenance'): string
+    {
+        return self::error($message, 503);
+    }
 }
